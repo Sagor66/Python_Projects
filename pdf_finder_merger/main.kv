@@ -1,0 +1,75 @@
+#:kivy 2.0.0
+
+<MyLayout>:
+
+    # GridLayout:
+    #     # row: 1
+    #     # col: 2
+
+    BoxLayout:
+        orientation: "horizontal"
+        size: root.width, root.height
+        padding: 10
+        spacing: 10
+
+        TextInput:
+            id: search_input
+            hint_text: "Enter the directory name from where you want to search pdf files"
+            font_size: 15
+            pos_hint: {'x': 1, 'y': 0.93}
+            size_hint: .9, None
+            height: "30dp"
+            multiline: False
+            background_color: 1,1,1,0.5
+            
+        Button:
+            text: "Search"
+            pos_hint: {'x': 1, 'y': 0.93}
+            size_hint: .1, None
+            height: "30dp"
+            background_color: (48/255, 84/255, 150/255, 1)
+            background_normal: ''
+            on_press: root.pdfFile_filter()
+    
+    BoxLayout:
+        orientation: "horizontal"
+        size: root.width, root.height
+        padding: 10
+        spacing: 10
+
+        TextInput:
+            id: file_name
+            hint_text: "All the pdf files will be shown here"
+            font_size: 16
+            pos_hint: {'x': 1, 'y': 0.2}
+            size_hint: 1, .7
+            height: "30dp"
+            multiline: True
+            background_color: 1,1,1,0.5
+
+    BoxLayout:
+        orientation: "horizontal"
+        size: root.width, root.height
+        padding: 10
+        spacing: 10
+
+        TextInput:
+            id: merge_input
+            hint_text: "Enter the directory name where you want to save the merged file"
+            font_size: 15
+            pos_hint: {'x': 1, 'y': 0.1}
+            size_hint: .85, None
+            height: "30dp"
+            multiline: False
+            background_color: 1,1,1,0.5
+            
+        Button:
+            text: "Merge PDF"
+            pos_hint: {'x': 1, 'y': 0.1}
+            size_hint: .15, None
+            height: "30dp"
+            background_color: (48/255, 84/255, 150/255, 1)
+            background_normal: ''
+            on_press: root.merge_pdf()
+    
+            
